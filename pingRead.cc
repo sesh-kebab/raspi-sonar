@@ -105,6 +105,7 @@ void RunCallback(const FunctionCallbackInfo<Value>& args) {
         }
         
         char result[2];
+        //float distance = 343.0 * (end - start) / 1000000 * .5;
         sprintf(result, "%d", end - start);
         
         const unsigned argc = 1;
