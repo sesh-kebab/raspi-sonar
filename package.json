@@ -1,0 +1,25 @@
+{
+  "name": "pingRead",
+  "version": "1.0.0",
+  "description": "RaspberryPi Ultrasonic sensor plugin",
+  "main": "pingRead.js",
+  "dependencies": {
+    "nan": "^2.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sesh-kebab/raspi-sonar.git"
+  },
+  "author": "Seshi Chemudugunta",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/sesh-kebab/raspi-sonar/issues"
+  },
+  "homepage": "https://github.com/sesh-kebab/raspi-sonar"
+}
