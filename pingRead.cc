@@ -6,6 +6,7 @@
 #include <pthread.h>
 #include <v8.h>
 #include <wiringPi.h>
+#include <nan.h>
  
 using namespace v8;
  

@@ -32,7 +32,8 @@ INCS_Debug := \
 	-I/root/.node-gyp/0.12.1/src \
 	-I/root/.node-gyp/0.12.1/deps/uv/include \
 	-I/root/.node-gyp/0.12.1/deps/v8/include \
-	-I/usr/local/include
+	-I/usr/local/include \
+	-I$(srcdir)/node_modules/nan
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=pingRead' \
@@ -65,7 +66,8 @@ INCS_Release := \
 	-I/root/.node-gyp/0.12.1/src \
 	-I/root/.node-gyp/0.12.1/deps/uv/include \
 	-I/root/.node-gyp/0.12.1/deps/v8/include \
-	-I/usr/local/include
+	-I/usr/local/include \
+	-I$(srcdir)/node_modules/nan
 
 OBJS := \
 	$(obj).target/$(TARGET)/pingRead.o
