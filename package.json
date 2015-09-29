@@ -2,8 +2,9 @@
   "name": "pingRead",
   "version": "1.0.0",
   "description": "RaspberryPi Ultrasonic sensor plugin",
-  "main": "pingRead.js",
+  "main": "index.js",
   "dependencies": {
+    "bindings": "^1.2.1",
     "nan": "^2.0.8"
   },
   "devDependencies": {},

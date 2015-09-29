@@ -23,7 +23,8 @@ Release/obj.target/pingRead/pingRead.o: ../pingRead.cc \
  ../node_modules/nan/nan_new.h \
  ../node_modules/nan/nan_implementation_12_inl.h \
  ../node_modules/nan/nan_persistent_12_inl.h \
- ../node_modules/nan/nan_weak.h ../node_modules/nan/nan_object_wrap.h
+ ../node_modules/nan/nan_weak.h ../node_modules/nan/nan_object_wrap.h \
+ ../pingRead.h
 ../pingRead.cc:
 /root/.node-gyp/0.12.1/src/node.h:
 /root/.node-gyp/0.12.1/deps/v8/include/v8.h:
@@ -52,3 +53,4 @@ Release/obj.target/pingRead/pingRead.o: ../pingRead.cc \
 ../node_modules/nan/nan_persistent_12_inl.h:
 ../node_modules/nan/nan_weak.h:
 ../node_modules/nan/nan_object_wrap.h:
+../pingRead.h:

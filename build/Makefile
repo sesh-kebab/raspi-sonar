@@ -303,8 +303,8 @@ $(obj).$(TOOLSET)/%.o: $(obj)/%.s FORCE_DO_CMD
 
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,pingRead.target.mk)))),)
-  include pingRead.target.mk
+                 $(join ^,pingReadExtension.target.mk)))),)
+  include pingReadExtension.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
