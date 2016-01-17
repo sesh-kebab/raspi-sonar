@@ -1,1 +1,0 @@
-cmd_Release/obj.target/pingRead.node := g++ -shared -pthread -rdynamic -lwiringPi  -Wl,-soname=pingRead.node -o Release/obj.target/pingRead.node -Wl,--start-group Release/obj.target/pingRead/pingRead.o -Wl,--end-group 
