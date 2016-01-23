@@ -3,7 +3,14 @@
 
 #include <nan.h>
 
-class SonarWorker : public AsyncWorker {
+using Nan::AsyncWorker;
+using Nan::Callback;
+
+class SonarWorker : public AsyncWorker 
+{
+private:
+    int sonarPin, duration;
+    
 public:
     SonarWorker(Callback *callback, int SonarPin);
   
@@ -11,10 +18,6 @@ public:
 
     void Execute();
     void HandleOKCallback();
-
-private:
-    int sonarPin;
-    int duration;
 };
 
 #endif

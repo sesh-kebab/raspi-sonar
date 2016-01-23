@@ -4,3 +4,4 @@ var sonar = pingReadExtension.sonarFactory(15);
 sonar.read(function(msg) {
     console.log('sonar.read callback called: ' + msg);
 });
+console.log('sonar.read() called. Waiting for callback!')
