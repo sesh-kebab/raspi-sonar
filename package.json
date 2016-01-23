@@ -1,7 +1,13 @@
 {
-  "name": "pingRead",
-  "version": "1.0.0",
-  "description": "RaspberryPi Ultrasonic sensor plugin",
+  "name": "raspi-sonar",
+  "version": "0.0.1",
+  "description": "Native Node Addon to read Ultrasonic sensors using a RaspberryPi",
+  "keywords": [
+    "raspberrypi",
+    "ultrasonic",
+    "nodebots",
+    "robots"
+  ],
   "main": "index.js",
   "dependencies": {
     "bindings": "^1.2.1",
@@ -16,7 +22,7 @@
     "type": "git",
     "url": "https://github.com/sesh-kebab/raspi-sonar.git"
   },
-  "author": "Seshi Chemudugunta",
+  "author": "Seshi Chemudugunta <sesh-kebab@outlook.com>",
   "license": "ISC",
   "gypfile": true,
   "bugs": {

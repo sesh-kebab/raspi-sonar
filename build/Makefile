@@ -303,8 +303,8 @@ $(obj).$(TOOLSET)/%.o: $(obj)/%.s FORCE_DO_CMD
 
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,pingReadExtension.target.mk)))),)
-  include pingReadExtension.target.mk
+                 $(join ^,raspiSonarAddon.target.mk)))),)
+  include raspiSonarAddon.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
