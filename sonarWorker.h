@@ -10,6 +10,7 @@ class SonarWorker : public AsyncWorker
 {
 private:
     int sonarPin, duration;
+    char* result;
     
 public:
     SonarWorker(Callback *callback, int SonarPin);
