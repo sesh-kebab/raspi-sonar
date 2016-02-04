@@ -1,0 +1,32 @@
+{
+  "name": "raspi-sonar",
+  "version": "0.0.1",
+  "description": "Native Node Addon to read Ultrasonic sensors using a RaspberryPi",
+  "keywords": [
+    "raspberrypi",
+    "ultrasonic",
+    "nodebots",
+    "robots"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sesh-kebab/raspi-sonar.git"
+  },
+  "author": "Seshi Chemudugunta <sesh-kebab@outlook.com>",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/sesh-kebab/raspi-sonar/issues"
+  },
+  "homepage": "https://github.com/sesh-kebab/raspi-sonar"
+}

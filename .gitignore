@@ -2,3 +2,7 @@
 .DS_Store
 .DS_Store?
 .AppleDouble/*
+
+# npm #
+node_modules
+build/
