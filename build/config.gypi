@@ -72,7 +72,7 @@
     "depth": "Infinity",
     "save_dev": "",
     "usage": "",
-    "__registry_npmjs_org___authToken": "faf06481-2081-47b8-8760-88c391e72f47",
+    "__registry_npmjs_org___authToken": "0d09b884-f665-436f-9509-d85300c4a4fe",
     "cafile": "",
     "https_proxy": "",
     "onload_script": "",

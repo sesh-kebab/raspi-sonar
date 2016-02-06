@@ -31,22 +31,20 @@ SonarWorker::~SonarWorker() {
 //async method
 void SonarWorker::Execute() {
     pinMode(sonarPin, OUTPUT);
-    //update code to use the same pin for trigger and signal
-    
-    unsigned int pinTrigger = 28, pinSignal = 29;
-    pinMode(pinTrigger, OUTPUT);
-    pinMode(pinSignal, INPUT);
+    digitalWrite(sonarPin, LOW);    //ensure state is LOW
     
     //set high for 10microseconds to trigger
-    digitalWrite(pinTrigger, HIGH);
+    digitalWrite(sonarPin, HIGH);
     delayMicroseconds(10);
-    digitalWrite(pinTrigger, LOW);
+    digitalWrite(sonarPin, LOW);
+    
+    pinMode(sonarPin, INPUT);
     
     //wait for high
     unsigned int start = 0;
     unsigned int end = 0;
     for(;;) {
-        int value = digitalRead(pinSignal);
+        int value = digitalRead(sonarPin);
         if (value != 0) {
             start = micros();
             break;
@@ -55,7 +53,7 @@ void SonarWorker::Execute() {
     
     //time taken for high to switch to low
     for(;;) {
-        int value = digitalRead(pinSignal);
+        int value = digitalRead(sonarPin);
         if (value != 1) {
             end = micros();
             break;
