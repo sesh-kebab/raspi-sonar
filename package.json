@@ -8,13 +8,18 @@
     "nodebots",
     "robots"
   ],
-  "main": "index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "bindings": "^1.2.1",
     "nan": "^2.0.8",
+    "raspi-peripheral": "^1.4.0",
     "raspi-wiringpi": "^1.0.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "node-gyp rebuild"

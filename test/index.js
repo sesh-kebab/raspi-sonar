@@ -1,6 +1,6 @@
 var pingReadExtension = require('../');
 
-var sonar = pingReadExtension.sonarFactory(29);
+var sonar = new pingReadExtension.Sonar(29);
 sonar.read(function(duration) {
     var distance = 343.0 * duration / 1000000 * .5;
     
