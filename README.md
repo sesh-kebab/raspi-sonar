@@ -6,3 +6,4 @@ Initially stand alone extension written in C++. The end goal is to integrate it 
 Relavant links: 
 * [raspi-sonar wiki](https://github.com/sesh-kebab/raspi-sonar/wiki)
 * [Johnny-Five Issue #842](https://github.com/rwaldron/johnny-five/issues/842)
+* [raspi-io PR 48](https://github.com/nebrius/raspi-io/pull/48)
