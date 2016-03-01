@@ -11,7 +11,13 @@ Relavant links:
 ##Installation
 `npm install raspi-sonar`
 
-##Example Usage
+##Example
+Note that GPIO pins are rated at 3.3v. An ultrasonic sensor like the HC-SR04 outputs 5v on the echo pin which could harm your Raspberry Pi's GPIO pins. Take care to use a voltage divider circuit to lower the voltage from the ECHO pin to the GPIO pin.
+
+###Circuit
+<img src="https://github.com/sesh-kebab/raspi-sonar/blob/documentation-update/docs/sonar-circuit.png" width="480" />
+
+###Code
 ```javascript
 var Sonar = require('raspi-sonar').Sonar;
 var sonarPin1 = new Sonar(29);
@@ -23,7 +29,10 @@ sonarPin1.read(function(duration) {
 ```
 
 ##API
-raspi-sonar npm package exposes a single class called Sonar. The Sonar class has a single public method that takes the GPIO pin number as an argument. If you installed [wiringPi](http://wiringpi.com) (which will automatically be installed when you install the raspi-sonar package), you can check the pin number by typing the command `gpio readall`. The output for a Raspberry Pi B+ would look like the below diagram.
+raspi-sonar npm package exposes a single class called Sonar. The Sonar class has a single public method that takes the wiringPi pin number as an argument. If you installed [wiringPi](http://wiringpi.com) (which will automatically be installed when you install the raspi-sonar package), you can check the which pin number to use by typing the command `gpio readall`. The output for a Raspberry Pi B+ would look like the below diagram. Note the 'wPi' columns.
+
+<img src="https://github.com/sesh-kebab/raspi-sonar/blob/documentation-update/docs/gpio-readall.png" width="480" />
+
 
 ###The MIT License (MIT)
 Copyright (c) 2016 Seshi Chemudugunta
