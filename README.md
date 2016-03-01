@@ -34,7 +34,9 @@ raspi-sonar npm package exposes a single class called Sonar. The Sonar class has
 <img src="https://github.com/sesh-kebab/raspi-sonar/blob/master/docs/gpio-readall.png" width="480" />
 
 
-###The MIT License (MIT)
+###License
+The MIT License (MIT)
+
 Copyright (c) 2016 Seshi Chemudugunta
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
