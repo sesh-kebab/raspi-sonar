@@ -1,6 +1,6 @@
 {
   "name": "raspi-sonar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Native Node Addon to read Ultrasonic sensors using a RaspberryPi",
   "keywords": [
     "raspberrypi",
@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "bindings": "^1.2.1",
-    "nan": "^2.0.8",
+    "nan": "^2.6.2",
     "raspi-peripheral": "^1.4.0",
     "raspi-wiringpi": "^1.0.6"
   },
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node-gyp rebuild"
+    "build": "node-gyp rebuild"
   },
   "repository": {
     "type": "git",
