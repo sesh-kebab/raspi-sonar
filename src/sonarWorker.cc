@@ -22,7 +22,7 @@ SonarWorker::SonarWorker(Callback *callback, int SonarPin)
     //init variables
     result = new char[80];            
 }
-        
+
 //destructor
 SonarWorker::~SonarWorker() {
     result = NULL;
@@ -50,7 +50,7 @@ void SonarWorker::Execute() {
             break;
         }
     }
-    
+
     //time taken for high to switch to low
     for(;;) {
         int value = digitalRead(sonarPin);
@@ -59,7 +59,7 @@ void SonarWorker::Execute() {
             break;
         }
     }
-    
+
     sprintf(result, "%d", end - start);
 }
 

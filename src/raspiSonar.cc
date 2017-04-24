@@ -6,6 +6,7 @@ using v8::Function;
 using v8::Local;
 using v8::Number;
 using v8::Value;
+using v8::Object;
 using Nan::AsyncQueueWorker;
 using Nan::AsyncWorker;
 using Nan::Callback;
@@ -27,8 +28,15 @@ public:
 
     static NAN_METHOD(New) { 
         if (info.IsConstructCall()) {
-            double value = info[0]->IsUndefined() ? 0 : Nan::To<double>(info[0]).FromJust();
-            RaspiSonar *obj = new RaspiSonar(value);
+            Local<v8::Object> parameterObject = info[0]->ToObject();
+            Local<v8::Value> pinValue = parameterObject->Get(Nan::New<v8::String>("config").ToLocalChecked());
+            Local<v8::Value> skipCallToSetup = parameterObject->Get(Nan::New<v8::String>("callWiringPiSetup").ToLocalChecked());
+
+            int pin = To<uint32_t>(pinValue).FromJust();
+            bool callWiringPiSetup = To<bool>(skipCallToSetup).FromMaybe(true);
+
+            RaspiSonar *obj = new RaspiSonar(pin, callWiringPiSetup);
+
             obj->Wrap(info.This());
             info.GetReturnValue().Set(info.This());
         } else {
@@ -38,27 +46,29 @@ public:
             info.GetReturnValue().Set(cons->NewInstance(argc, argv));
         }
     }
-    
+
     static NAN_METHOD(GetHandle) { 
         RaspiSonar* obj = Nan::ObjectWrap::Unwrap<RaspiSonar>(info.Holder());
         info.GetReturnValue().Set(obj->handle());
     }
-    
+
     static NAN_METHOD(Read) {
         RaspiSonar* obj = Nan::ObjectWrap::Unwrap<RaspiSonar>(info.Holder());
         Callback* callback = new Callback(info[0].As<Function>());
         
         AsyncQueueWorker(new SonarWorker(callback, obj->Pin));
     }
-    
+
     static inline Nan::Persistent<v8::Function> & constructor() {
         static Nan::Persistent<v8::Function> my_constructor;
         return my_constructor;
     }
 
-    RaspiSonar(int SonarPin) {
+    RaspiSonar(int SonarPin, bool CallWiringPiSetup) {
         Pin = SonarPin;
-        wiringPiSetup();
+
+        if (CallWiringPiSetup) {
+            wiringPiSetup();
+        }
     }
 };
-

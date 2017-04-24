@@ -15,7 +15,7 @@ NAN_MODULE_INIT(InitAll) {
     SetPrototypeMethod(tpl, "read", RaspiSonar::Read);
 
     RaspiSonar::constructor().Reset(Nan::GetFunction(tpl).ToLocalChecked());
-    Nan::Set(target, Nan::New("sonarFactory").ToLocalChecked(),
+    Nan::Set(target, Nan::New("RaspiSonar").ToLocalChecked(),
       Nan::GetFunction(tpl).ToLocalChecked());
 }
 
