@@ -6,10 +6,13 @@ export class Sonar extends Peripheral {
     constructor(config, callWiringPiSetup) {
         super(config);
 
-        this.sensor = addon.sonarFactory(
+
+        this.sensor = addon.RaspiSonar(
             { 
                 config,             // trigger and echo pin number
-                callWiringPiSetup   // optional: defaults to true.
+                callWiringPiSetup: (callWiringPiSetup === undefined || callWiringPiSetup === null) 
+                    ? true 
+                    :  callWiringPiSetup
             }); 
     }
     
