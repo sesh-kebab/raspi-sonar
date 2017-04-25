@@ -1,6 +1,6 @@
 {
   "name": "raspi-sonar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Native Node Addon to read Ultrasonic sensors using a RaspberryPi",
   "keywords": [
     "raspberrypi",
