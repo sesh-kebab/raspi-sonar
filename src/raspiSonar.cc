@@ -2,6 +2,7 @@
 #include <nan.h>
 #include "sonarWorker.h"
 
+using v8::Context;
 using v8::Function;
 using v8::Local;
 using v8::Number;
@@ -43,7 +44,8 @@ public:
             const int argc = 1;
             v8::Local<v8::Value> argv[argc] = {info[0]};
             v8::Local<v8::Function> cons = Nan::New(constructor());
-            info.GetReturnValue().Set(cons->NewInstance(argc, argv));
+            Local<Context> context = info.GetIsolate()->GetCurrentContext();
+            info.GetReturnValue().Set(cons->NewInstance(context, argc, argv).ToLocalChecked());
         }
     }
 
